@@ -33,7 +33,7 @@ function App() {
   const [wicket, setWicket] = useState(2);
   // const [over, setOver] = useState(50);
   // const [ball, setBall] = useState(5.0)
-  const [ball, setBall] = useState(5);
+  const [ball, setBall] = useState(50);
 
   const indWon = () => {
     if (score > 100) {
