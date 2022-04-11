@@ -44,10 +44,6 @@ function App() {
     // }
   };
 
-  if (wicket > 12) {
-    return;
-  }
-
   return (
     <div className="App">
       <h3>India:</h3>
@@ -90,7 +86,11 @@ function App() {
         <button
           className="addScore1"
           onClick={() => {
-            setScore(score + 1);
+            if (score > 100) {
+              return;
+            } else {
+              setScore(score + 1);
+            }
           }}
         >
           Add 1
@@ -98,12 +98,25 @@ function App() {
         <button
           className="addScore4"
           onClick={() => {
-            setScore(score + 4);
+            if (score > 100) {
+              return;
+            } else {
+              setScore(score + 4);
+            }
           }}
         >
           Add 4
         </button>
-        <button className="addScore6" onClick={() => setScore(score + 6)}>
+        <button
+          className="addScore6"
+          onClick={() => {
+            if (score > 100) {
+              return;
+            } else {
+              setScore(score + 6);
+            }
+          }}
+        >
           Add 6
         </button>
       </div>
@@ -113,7 +126,11 @@ function App() {
         {/* Increase the count of wicket */}
         <button
           onClick={() => {
-            setWicket(wicket + 1);
+            if (score > 100 || wicket > 11) {
+              return;
+            } else {
+              setWicket(wicket + 1);
+            }
           }}
         >
           Add 1 wicket
@@ -125,7 +142,11 @@ function App() {
         {/* Increase the total number of balls thrown here. */}
         <button
           onClick={() => {
-            setBall(ball + 0.1);
+            if (score > 100 || wicket > 11) {
+              return;
+            } else {
+              setBall(ball + 0.1);
+            }
           }}
         >
           Add 1
